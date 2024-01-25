@@ -11,7 +11,7 @@ int main(void) {
     unsigned char d[4096];
     int comprlen, decomprlen;
     int j, ranlen;
-    int times = 1000000;
+    int times = 100000;
     char *strings[] = {
         "This is a small string",
         "foobar",
@@ -62,7 +62,7 @@ int main(void) {
         }
         j++;
     }
-    printf("Encrypting and decrypting %d test strings...\n", times);
+    printf("Compressing and decompressing %d test strings...\n", times);
     while(times--) {
         char charset[]="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvxyz/. ";
         ranlen = random() % 512;
@@ -79,6 +79,10 @@ int main(void) {
         if (ranlen != decomprlen || memcmp(in,d,ranlen)) {
             printf("Bug! TEST NOT PASSED\n");
             exit(1);
+        }
+        if (times % 10000 == 0) {
+            printf(".");
+            fflush(stdout);
         }
     }
     printf("TEST PASSED :)\n");

@@ -96,6 +96,11 @@ Compressed length: 66.95%
 ## Implementations
 
 In this repository you will find both a C and a Python implementation.
+The implementation is optimized for space (both RAM and code executable)
+and not for speed, since most use cases will use it very seldom, only when
+a short message will be sent. So the algorithm scans the tables at every
+string position, which is very costly in general, but should still be
+adequate for this library.
 
 ## License
 

@@ -144,4 +144,6 @@ if __name__ == "__main__":
     compressed = smax_compress(sys.argv[1])
     print("Compressed length: {:.02f}%".format(len(compressed) / len(sys.argv[1].encode()) * 100))
     print(compressed)
-    print("Decompress back: ", smax_decompress(compressed))
+    decompressed = smax_decompress(compressed)
+    print("Decompress back: ", decompressed)
+    print("The strings are the same after the back and forth?", sys.argv[1] == decompressed)
