@@ -19,37 +19,39 @@ The words table is composed of 256 words. Short words (len less than 4 bytes)
 are not present because they are better encoded with bigrams.
 This is the full list of the 256 words:
 
-"have", "that", "with", "this", "they", "from", "that", "what", "their",
-"would", "make", "about", "know", "will", "time", "there", "year", "think",
-"when", "which", "them", "some", "people", "take", "into", "just", "your",
-"come", "could", "than", "like", "other", "then", "more", "these", "want",
-"look", "first", "also", "because", "more", "find", "here", "thing", "give",
-"many", "well", "only", "those", "tell", "very", "even", "back", "good",
-"woman", "through", "life", "child", "there", "work", "down", "after", "should",
-"call", "world", "over", "school", "still", "last", "need", "feel", "three",
-"when", "state", "never", "become", "between", "high", "really", "something",
-"most", "another", "much", "family", "leave", "while", "mean", "keep",
-"student", "great", "same", "group", "begin", "seem", "country", "help", "talk",
-"where", "turn", "problem", "every", "start", "hand", "might", "show", "part",
-"about", "against", "place", "over", "such", "again", "case", "most", "week",
-"company", "where", "system", "each", "right", "program", "hear", "question",
-"during", "work", "play", "government", "small", "number", "always", "move",
-"like", "night", "live", "point", "believe", "hold", "today", "bring", "happen",
-"next", "without", "before", "large", "million", "must", "home", "under",
-"water", "room", "write", "mother", "area", "national", "money", "story",
-"young", "fact", "month", "different", "right", "study", "book", "word",
-"though", "business", "issue", "side", "kind", "four", "head", "black",
-"long", "both", "little", "house", "after", "since", "long", "provide",
-"service", "around", "friend", "important", "father", "away", "until", "power",
-"hour", "game", "often", "line", "political", "among", "ever", "stand",
-"lose", "however", "member", "meet", "city", "almost", "include", "continue",
-"later", "community", "much", "name", "five", "once", "white", "least",
-"president", "learn", "real", "change", "team", "minute", "best", "several",
-"idea", "body", "information", "nothing", "right", "lead", "social",
-"understand", "whether", "back", "watch", "together", "follow", "around",
-"parent", "only", "stop", "face", "anything", "create", "public", "already",
-"speak", "others", "read", "level", "allow", "office", "spend", "door",
-"health", "person", "sure", "such", "history", "party"
+"that", "this", "with", "from", "your", "have", "more", "will",
+"home", "about", "page", "search", "free", "other", "information", "time",
+"they", "site", "what", "which", "their", "news", "there", "only",
+"when", "contact", "here", "business", "also", "help", "view", "online",
+"first", "been", "would", "were", "services", "some", "these", "click",
+"like", "service", "than", "find", "price", "date", "back", "people",
+"list", "name", "just", "over", "state", "year", "into", "email",
+"health", "world", "next", "used", "work", "last", "most", "products",
+"music", "data", "make", "them", "should", "product", "system", "post",
+"city", "policy", "number", "such", "please", "available", "copyright",
+"support", "message", "after", "best", "software", "then", "good", "video",
+"well", "where", "info", "rights", "public", "books", "high", "school",
+"through", "each", "links", "review", "years", "order", "very", "privacy",
+"book", "items", "company", "read", "group", "need", "many", "user",
+"said", "does", "under", "general", "research", "university", "january", "mail",
+"full", "reviews", "program", "life", "know", "games", "days", "management",
+"part", "could", "great", "united", "hotel", "real", "item", "international",
+"center", "ebay", "must", "store", "travel", "comments", "made", "development",
+"report", "member", "details", "line", "terms", "before", "hotels", "send",
+"right", "type", "because", "local", "those", "using", "results", "office",
+"education", "national", "design", "take", "posted", "internet", "address",
+"community", "within", "states", "area", "want", "phone", "shipping",
+"reserved", "subject", "between", "forum", "family", "long", "based", "code",
+"show", "even", "black", "check", "special", "prices", "website", "index",
+"being", "women", "much", "sign", "file", "link", "open", "today", "technology",
+"south", "case", "project", "same", "pages", "version", "section", "found",
+"sports", "house", "related", "security", "both", "county", "american", "photo",
+"game", "members", "power", "while", "care", "network", "down", "computer",
+"systems", "three", "total", "place", "following", "download", "without",
+"access", "think", "north", "resources", "current", "posts", "media", "control",
+"water", "history", "pictures", "size", "personal", "since", "including",
+"guide", "shop", "directory", "board", "location", "change", "white", "text",
+"small", "rating", "rate", "government"
 
 If a word match is not found, the bigram table is used. The table is composed of the most common 128 bigrams by frequency, for a total of 256 bytes:
 
@@ -84,13 +86,13 @@ As long as the messages are latin letters natural language messages with common 
 
 ## Real world compression achieved
 
-./smax c "The program is designed to work well with English text"
+./smaz2 "The program is designed to work well with English text"
 Compressed length: 44.44%
 
-./smax c "As long as the messages are latin letters natural language messages with common statistical properties, the program will only seldom use more space than needed"
+./smaz2 "As long as the messages are latin letters natural language messages with common statistical properties, the program will only seldom use more space than needed"
 Compressed length: 54.72%
 
-./smax c "Anche se in maniera meno efficiente, questo algoritmo di compressione è in grado di comprimere testi in altre lingue."
+./smaz2 "Anche se in maniera meno efficiente, questo algoritmo di compressione è in grado di comprimere testi in altre lingue."
 Compressed length: 66.95%
 
 ## Implementations
