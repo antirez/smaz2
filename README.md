@@ -80,9 +80,9 @@ So this is how the encoding works:
 
 This means that this compression scheme will use more space than the input
 string only when emtting verbatim bytes, that is when the string contains
-special or unicode characters.
+special or unicode characters that happen to have bytes with values between 1 to 8: this is a very rare condition in pratice, and even when it happens it is almost always compensated by the other words.
 
-As long as the messages are latin letters natural language messages with common statistical properties, the program will only seldom use more space than needed and will often be able to compress words to less bytes. However programs using this scheme should have a one bit flag in the header in order to signal if the message is compressed or not, so that every time the result would be larger than the uncompressed message, no compression is used in order to trasmit the message.
+As long as the messages are latin letters natural language messages with common statistical properties, the program will never use more space than needed and will often be able to compress words to less bytes. However programs using this scheme are likely to have a one bit flag in the header in order to signal if the message is compressed or not, so that every time the result would be larger than the uncompressed message, no compression can used in order to trasmit the message.
 
 ## Real world compression achieved
 
