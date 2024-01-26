@@ -4,10 +4,10 @@
 
 ## Motivations
 
-LoRa networks have an extremely limited bandwidth and requires a long
-channel time in order to send even small messages. When LoRa is used
-to send messages between humans, a form of compression improves the
-channel utilization in a sensible way.
+LoRa networks have an extremely limited bandwidth and each message
+requires a long channel time in order to be transmitted (often in the order
+of *seconds!*). When LoRa is used to send messages between humans, a form
+of compression improves the channel utilization in a sensible way.
 
 This compression scheme is designed to compress small messages in extremely
 memory constrained devices, like ESP32 devices running MicroPython.
